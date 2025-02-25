@@ -58,7 +58,7 @@ for i, (a1, a2, b, inequality_type) in enumerate(inequalities):
     if inequality_type == '<=':
         plt.plot(x_values, y_values, label=f'{a1}x₁ + {a2}x₂ <= {b}', color='blue')
         plt.fill_between(x_values, y_values, np.full_like(x_values, 10), color='blue', where=y_values <= 10, alpha=0.3)
-    else:  # '>='
+    else:
         plt.plot(x_values, y_values, label=f'{a1}x₁ + {a2}x₂ >= {b}', color='red')
         plt.fill_between(x_values, y_values, np.full_like(x_values, -10), color='red', where=y_values >= -10, alpha=0.3)
 
