@@ -5,10 +5,10 @@ import numpy as np
 from scipy.optimize import linprog
 
 inequalities = [
-    (10, 3, 30, '>='),
-    (-1, 1, 5, '<='),
-    (1, 1, 10, '<='),
-    (0, 1, 2, '>='),
+    (1, -1, 1, '<='),
+    (1, 1, 2, '<='),
+    (1, -2, 0, '>='),
+    (2, 2, 1, '>='),
 ]
 
 # inequalities = [
@@ -31,7 +31,7 @@ for a1, a2, b, inequality_type in inequalities:
         A_ub.append([-a1, -a2])
         b_ub.append(-b)
 
-c = [1, 3]
+c = [1, -2]
 # c = [1, -2]
 
 res_min = linprog(c, A_ub=A_ub, b_ub=b_ub, method='highs')
